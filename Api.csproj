@@ -5,9 +5,5 @@
     <Product>Api - Contas a Pagar</Product>
   </PropertyGroup>
 
-  <ItemGroup>
-    <Folder Include="Controllers\" />
-  </ItemGroup>
-
 
 </Project>
