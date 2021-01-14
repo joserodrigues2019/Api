@@ -1,9 +1,8 @@
-﻿using Api.Domain.Models;
-using Api.Domain.Repositories;
-using Api.Persistence.Contexts;
+﻿using Api.Database.Contexts;
+using Api.Database.Models;
 using System.Collections.Generic;
 
-namespace Api.Persistence.Repositories
+namespace Api.Database.Repositories
 {
     public class ContasPagarRepository: BaseRepository, IContasPagarRepository
     {

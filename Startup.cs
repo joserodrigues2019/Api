@@ -1,14 +1,12 @@
+using Api.BussinesLogic;
+using Api.Database.Contexts;
+using Api.Database.Repositories;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.EntityFrameworkCore;
-using Api.Persistence.Contexts;
-using Api.Domain.Repositories;
-using Api.Persistence.Repositories;
-using Api.Domain.Services;
-using Api.Services;
 
 namespace Api
 {
@@ -31,8 +29,8 @@ namespace Api
 
             // Injeção de Dependencias
 
+            services.AddScoped<IContasPagarBll, ContasPagarBll>();
             services.AddScoped<IContasPagarRepository, ContasPagarRepository>();
-            services.AddScoped<IContasPagarService, ContasPagarService>();
 
         }
 

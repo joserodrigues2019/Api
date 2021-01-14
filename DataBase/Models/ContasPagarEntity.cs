@@ -2,7 +2,7 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace Api.Domain.Models
+namespace Api.Database.Models
 {
     [Table("ContasPagar")]
     public class ContasPagarEntity

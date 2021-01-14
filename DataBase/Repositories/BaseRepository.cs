@@ -1,6 +1,6 @@
-﻿using Api.Persistence.Contexts;
+﻿using Api.Database.Contexts;
 
-namespace Api.Persistence.Repositories
+namespace Api.Database.Repositories
 {
     public class BaseRepository
     {

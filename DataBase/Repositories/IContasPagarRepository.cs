@@ -1,8 +1,7 @@
-﻿using Api.Domain.Models;
+﻿using Api.Database.Models;
 using System.Collections.Generic;
-using System.Threading.Tasks;
 
-namespace Api.Domain.Repositories
+namespace Api.Database.Repositories
 {
     public interface IContasPagarRepository
     {

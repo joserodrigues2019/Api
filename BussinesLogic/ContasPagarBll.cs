@@ -1,15 +1,14 @@
-﻿using Api.Domain.Models;
-using Api.Domain.Repositories;
-using Api.Domain.Services;
+﻿using Api.Database.Models;
+using Api.Database.Repositories;
 using System.Collections.Generic;
 
-namespace Api.Services
+namespace Api.BussinesLogic
 {
-    public class ContasPagarService : IContasPagarService
+    public class ContasPagarBll : IContasPagarBll
     {
         private readonly IContasPagarRepository _contasPagarRepository;
 
-        public ContasPagarService(IContasPagarRepository contasPagarRepository)
+        public ContasPagarBll(IContasPagarRepository contasPagarRepository)
         {
             _contasPagarRepository = contasPagarRepository;
         }

@@ -1,18 +1,17 @@
-﻿using Api.Domain.Models;
-using Api.Domain.Services;
+﻿using Api.BussinesLogic;
+using Api.Database.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
-using System.Threading.Tasks;
 
-namespace Api.Controllers
+namespace Api.Services
 {
     [Route("[controller]")]
     [ApiController]
     public class ContasPagarController : ControllerBase
     {
-        private readonly IContasPagarService _serviceContasPagar;
+        private readonly IContasPagarBll _serviceContasPagar;
 
-        public ContasPagarController(IContasPagarService serviceContasPagar)
+        public ContasPagarController(IContasPagarBll serviceContasPagar)
         {
             _serviceContasPagar = serviceContasPagar;
         }

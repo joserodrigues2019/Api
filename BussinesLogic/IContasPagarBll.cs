@@ -1,9 +1,9 @@
-﻿using Api.Domain.Models;
+﻿using Api.Database.Models;
 using System.Collections.Generic;
 
-namespace Api.Domain.Services
+namespace Api.BussinesLogic
 {
-    public interface IContasPagarService
+    public interface IContasPagarBll
     {
         IEnumerable<ContasPagarEntity> Listar();
     }
