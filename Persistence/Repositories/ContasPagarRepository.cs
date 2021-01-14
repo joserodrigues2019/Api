@@ -13,9 +13,9 @@ namespace Api.Persistence.Repositories
         {
 
         }
-        public async Task Add(ContasPagarEntity clientes)
+        public async Task Add(ContasPagarEntity contas)
         {
-            await _context.ContasPagar.AddAsync(clientes);
+            await _context.ContasPagar.AddAsync(contas);
 
             _context.SaveChanges();
         }
