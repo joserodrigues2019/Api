@@ -5,6 +5,10 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.EntityFrameworkCore;
 using Api.Persistence.Contexts;
+using Api.Domain.Repositories;
+using Api.Persistence.Repositories;
+using Api.Domain.Services;
+using Api.Services;
 
 namespace Api
 {
@@ -24,6 +28,12 @@ namespace Api
                     options.UseSqlServer(Configuration.GetConnectionString("Context")));
 
             services.AddControllers();
+
+            // Injeção de Dependencias
+
+            services.AddScoped<IContasPagarRepository, ContasPagarRepository>();
+            services.AddScoped<IContasPagarService, ContasPagarService>();
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
