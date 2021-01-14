@@ -11,6 +11,13 @@ namespace Api.Database.Repositories
 
         }
 
+        public void Add(ContasPagarEntity contas)
+        {
+             _context.ContasPagar.AddAsync(contas);
+
+            _context.SaveChanges();
+        }
+
         public IEnumerable<ContasPagarEntity> Listar()
         {
             return _context.ContasPagar;

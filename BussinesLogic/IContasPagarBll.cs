@@ -6,5 +6,6 @@ namespace Api.BussinesLogic
     public interface IContasPagarBll
     {
         IEnumerable<ContasPagarEntity> Listar();
+        string Incluir(ContasPagarEntity contasPagar);
     }
 }

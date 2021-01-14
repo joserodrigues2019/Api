@@ -6,5 +6,6 @@ namespace Api.Database.Repositories
     public interface IContasPagarRepository
     {
         IEnumerable<ContasPagarEntity> Listar();
+        void Add(ContasPagarEntity contas);
     }
 }

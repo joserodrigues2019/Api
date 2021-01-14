@@ -23,5 +23,11 @@ namespace Api.Services
             return _serviceContasPagar.Listar(); ;
         }
 
+        // POST: api/ContasPagarEntities
+        [HttpPost]
+        public string Post([FromBody] ContasPagarEntity contasPagar)
+        {
+            return _serviceContasPagar.Incluir(contasPagar);
+        }
     }
 }
