@@ -1,7 +1,7 @@
 ﻿using Api.Database.Models;
 using System.Collections.Generic;
 
-namespace Api.BussinessLogic
+namespace Api.BusinessLogic
 {
     public interface IContasPagarBll
     {
