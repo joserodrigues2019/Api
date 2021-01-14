@@ -2,7 +2,6 @@
 using Api.Domain.Services;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
-using System.Threading.Tasks;
 
 namespace Api.Controllers
 {
@@ -19,21 +18,9 @@ namespace Api.Controllers
 
         // GET: api/ContasPagarEntities
         [HttpGet]
-        public async Task<IEnumerable<ContasPagarEntity>> GetAllAsync()
+        public IEnumerable<ContasPagarEntity> Get()
         {
-            var result = await _serviceContasPagar.ListAsync();
-
-            return result;
+            return _serviceContasPagar.Listar(); ;
         }
-
-        // POST: api/ContasPagarEntities
-        // To protect from overposting attacks, enable the specific properties you want to bind to, for
-        // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
-        [HttpPost]
-        public void PostCliente(ContasPagarEntity contasPagar)
-        {
-            _serviceContasPagar.Incluir(contasPagar);
-        }
-
     }
 }

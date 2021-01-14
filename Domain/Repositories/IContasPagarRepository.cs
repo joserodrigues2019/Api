@@ -6,7 +6,6 @@ namespace Api.Domain.Repositories
 {
     public interface IContasPagarRepository
     {
-        Task<IEnumerable<ContasPagarEntity>> ListAsync();
-        Task Add(ContasPagarEntity contas);
+        IEnumerable<ContasPagarEntity> Listar();
     }
 }

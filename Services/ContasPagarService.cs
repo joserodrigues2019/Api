@@ -2,7 +2,6 @@
 using Api.Domain.Repositories;
 using Api.Domain.Services;
 using System.Collections.Generic;
-using System.Threading.Tasks;
 
 namespace Api.Services
 {
@@ -15,14 +14,9 @@ namespace Api.Services
             _contasPagarRepository = contasPagarRepository;
         }
 
-        public async Task<IEnumerable<ContasPagarEntity>> ListAsync()
+        public IEnumerable<ContasPagarEntity> Listar()
         {
-            return await _contasPagarRepository.ListAsync();
-        }
-
-        public async void Incluir(ContasPagarEntity contasPagar)
-        {
-            await _contasPagarRepository.Add(contasPagar);
+            return  _contasPagarRepository.Listar();
         }
     }
 }
