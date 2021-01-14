@@ -8,6 +8,9 @@ namespace Api.BussinesLogic
     public class ContasPagarBll : IContasPagarBll
     {
         private readonly IContasPagarRepository _contasPagarRepository;
+        private string regraDiasAtraso;
+        private string  Multa;
+        private string JurosDia;
 
         public ContasPagarBll(IContasPagarRepository contasPagarRepository)
         {
@@ -56,6 +59,12 @@ namespace Api.BussinesLogic
 
                         contasPagar.QuantidadeDiasAtraso = qtdDiasAtraso;
                         contasPagar.ValorCorrigido = valorComAtraso;
+
+                        //Persistir a regra para o calculo
+                        contasPagar.DiasEmAtraso = regraDiasAtraso;
+                        contasPagar.Multa = Multa;
+                        contasPagar.JurosDia = JurosDia;
+
                     }
 
                      _contasPagarRepository.Add(contasPagar);
@@ -75,7 +84,11 @@ namespace Api.BussinesLogic
         {
             bool temAtraso;
 
-            if (dataPagamento > dataVencimento)
+            // Regra: Quando a data de vencimento for menor ou igual a data do dia corrente
+            // verificar qual quando foi feito o pagamento pela data de pagamento
+
+            if ( dataVencimento <= DateTime.Now &&
+                dataPagamento > dataVencimento)
             {
                 temAtraso = true;
             }
@@ -104,7 +117,6 @@ namespace Api.BussinesLogic
 
             //R$ 500,00(valor do boleto) +R$ 10,00(valor da multa) + 1,65(valor dos juros por atraso) = 
             // R$ 511,65 valor final cobrado.
-
             int percentualMulta;
             double percetualJurosMes;
             double resultCalculo;
@@ -115,16 +127,33 @@ namespace Api.BussinesLogic
             {
                 percentualMulta = 2;
                 percetualJurosMes = 0.1;
+                
+                // regras para o calculo
+                regraDiasAtraso = "até 3 dias";
+                Multa = "2%";
+                JurosDia = "0,1%";
+
             }
             else if (qtDiasAtraso > 3 && qtDiasAtraso < 5) // > 3 dias
             {
                 percentualMulta = 3;
                 percetualJurosMes = 0.2;
+
+                // regras para o calculo
+                regraDiasAtraso = "superior a 3 dias";
+                Multa = "2%";
+                JurosDia = "0,1%";
             }
             else  // > 5 dias
             {
+               
                 percentualMulta = 5;
                 percetualJurosMes = 0.3;
+
+                // regras para o calculo
+                regraDiasAtraso = "superior a 5 dias";
+                Multa = "2%";
+                JurosDia = "0,1%";
             }
 
             // Aplicar Calculo

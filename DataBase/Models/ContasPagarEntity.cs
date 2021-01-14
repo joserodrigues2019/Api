@@ -30,5 +30,17 @@ namespace Api.Database.Models
         [Column("qtde_dias_atraso")]
         public int QuantidadeDiasAtraso { get; set; }
 
+        [Column("dias_atraso")]
+        [StringLength(20)]
+        public string DiasEmAtraso { get; set; }
+
+        [Column("multa")]
+        [StringLength(5)]
+        public string Multa { get; set; }
+
+        [Column("juros_dia")]
+        [StringLength(5)]
+        public string JurosDia { get; set; }
+
     }
 }
