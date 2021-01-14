@@ -10,7 +10,6 @@ C#.Net
 EntityFramworkCore
 Sql Server Express 2019
 
-Modelo: MVC
 Camadas ==>>
 Controler - Application Services
 Bussines Logic - Regras de Negócio
