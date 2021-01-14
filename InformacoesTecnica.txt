@@ -1,0 +1,20 @@
+Solução para o Desafio Técnico: Desenvolvedor .Net Senior
+
+Serviço REST: Api - Contas a Pagar
+Nome Banco de Dados: dbAPI
+
+Arquitetura API:
+Projeto tipo Web API
+C#.Net
+.Net Core
+EntityFramworkCore
+Sql Server Express 2019
+
+Modelo: MVC
+Camadas ==>>
+Controler - Application Services
+Bussines Logic - Regras de Negócio
+DatabaseAccess - Model Entity - Repository - Context
+
+IDE: Visual Studio Community 2019
+SQL Server Express 2019
