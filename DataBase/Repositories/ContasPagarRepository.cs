@@ -1,6 +1,7 @@
 ﻿using Api.Database.Contexts;
 using Api.Database.Models;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace Api.Database.Repositories
 {
@@ -20,7 +21,7 @@ namespace Api.Database.Repositories
 
         public IEnumerable<ContasPagarEntity> Listar()
         {
-            return _context.ContasPagar;
+            return _context.ContasPagar.ToList();
         }
     }
 }
