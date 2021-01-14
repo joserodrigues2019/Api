@@ -1,4 +1,4 @@
-﻿using Api.BussinesLogic;
+﻿using Api.BussinessLogic;
 using Api.Database.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;

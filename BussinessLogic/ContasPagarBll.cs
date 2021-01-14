@@ -3,7 +3,7 @@ using Api.Database.Repositories;
 using System;
 using System.Collections.Generic;
 
-namespace Api.BussinesLogic
+namespace Api.BussinessLogic
 {
     public class ContasPagarBll : IContasPagarBll
     {

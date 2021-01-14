@@ -1,4 +1,4 @@
-using Api.BussinesLogic;
+using Api.BussinessLogic;
 using Api.Database.Contexts;
 using Api.Database.Repositories;
 using Microsoft.AspNetCore.Builder;
