@@ -13,7 +13,7 @@ namespace Api.Database.Repositories
 
         public void Add(ContasPagarEntity contas)
         {
-             _context.ContasPagar.AddAsync(contas);
+             _context.ContasPagar.Add(contas);
 
             _context.SaveChanges();
         }
